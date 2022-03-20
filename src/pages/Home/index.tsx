@@ -2,10 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { convertUnixDate } from "../../util/convertUnixTime";
 import * as Location from "expo-location";
-import { api } from "../../services/api";
-import { Dimensions } from "react-native";
-// import Video from 'react-native-video';
-import video from "../../assets/video/weather.mp4";
+import CardAlert from '../../components/CardAlert';
 import image from "../../assets/bg.png";
 import { getCurrentWeather, setStoredCurrentWeather } from '../../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,21 +18,20 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { useNavigation } from "@react-navigation/core";
 // import { useSelector } from "react-redux";
 
-import { Container, Title, Header, Wrapper, Background } from "./styles";
-
-const { width, height } = Dimensions.get("window");
+import { Container, City, Header, TitleCard, Background, Temperature, Climate, MaxMin, Content } from "./styles";
+import CardWeather from "../../components/CardWeather";
 
 export default function Home() {
   const dispatch = useDispatch(); 
   const [location, setLocation] = useState(null);
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [currentWeather2, setCurrentWeather2] = useState(null);
+  const [currentWeatherStored, setCurrentWeatherStored] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
-  const { 
-    storedCity: city,
-  } = useSelector( state => state.CurrentWeather);
+  // const { 
+  //   storedCity: city,
+  // } = useSelector( state => state.CurrentWeather);
 
   // const { 
   //   storedCity: city, 
@@ -57,33 +53,15 @@ export default function Home() {
     })();
   }, []);
 
-  useEffect(() => {
-    dispatch(getCurrentWeather({latitude, longitude}));
+  // useEffect(() => {
+  //   dispatch(getCurrentWeather({latitude, longitude}));
 
-    return () => dispatch(setStoredCurrentWeather({ city: null, temp: null, temp_max: null, temp_min: null, weather: null }));
-  }, [dispatch, latitude, longitude]);
-
-  useEffect(() => {
-    setCurrentWeather2(city);
-  }, [city]);
+  //   return () => dispatch(setStoredCurrentWeather({ city: null, temp: null, temp_max: null, temp_min: null, weather: null }));
+  // }, [dispatch, latitude, longitude]);
 
   // useEffect(() => {
-  //   setCityT(city);
+  //   setCurrentWeatherStored(city);
   // }, [city]);
-  // useEffect(() => {
-  //   setCity(useSelector(state => state.CurrentWeather.storedCity));
-  // }, [city]);
-
-  // useEffect(() => {
-  //   setMovementsList(movements);
-  // }, [movements]);
-
-  // let text = 'Waiting..';
-  // if (errorMsg) {
-  //   text = errorMsg;
-  // } else if (location) {
-  //   text = JSON.stringify(location);
-  // }
 
   // api.get(`onecall?lat=${String(location?.coords?.latitude)}&lon=${String(location?.coords?.longitude)}&appid=ead617ec2dba6d888611653b004c0c2a&lang=pt_br&units=metric&exclude=minutely,`).then(res => {
   //   console.log(res.data, "aqui");
@@ -115,8 +93,20 @@ export default function Home() {
     <Container>
       <Background source={image} resizeMode="cover">
         <Header>
-          <Title></Title>
+          <City>Balneário Camboriú</City>
+          <Temperature>70°</Temperature>
+          <Climate>Nublado</Climate>
+          <MaxMin>Máx.: 32° Min.: 23°</MaxMin>
         </Header>
+        {/* <Content> */}
+          <CardAlert
+            title={"Acumulado de chuva"}
+            description={"Instituto Nacional de Meteorologia: Tempestade"}
+          />
+          <CardWeather
+            title={"Previsão do tempo"}
+          ></CardWeather>
+        {/* </Content> */}
       </Background>
     </Container>
     // <View style={styles.container}>

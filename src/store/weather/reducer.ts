@@ -1,8 +1,6 @@
 import { SET_STORED_CURRENTWEATHER } from './actionTypes';
 
 const INITIAL_STATE = {
-  // storedMovementsSafeBox: {},
-  // storedMovements: [],
   storedCity: null,
   storedTemp: null,
   storedTempMax: null,
@@ -10,7 +8,7 @@ const INITIAL_STATE = {
   storedWeather: null
 };
 
-const movements = (state = INITIAL_STATE, action) => {
+const weather = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SET_STORED_CURRENTWEATHER: {
       const {
@@ -35,4 +33,4 @@ const movements = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default movements;
+export default weather;

@@ -2,12 +2,25 @@ import styled from 'styled-components/native';
 import colors from "../../constants/colors";
 import { normalize } from '../../util/normalize';
 
+
 export const Container = styled.View`
   flex: 1;
 `;
 
 export const Background = styled.ImageBackground`
   flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Refresh = styled.TouchableOpacity`
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: ${colors.primary};
   justify-content: center;
   align-items: center;
 `;

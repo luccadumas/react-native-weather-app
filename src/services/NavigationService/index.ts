@@ -1,8 +1,10 @@
 import { createRef } from 'react';
+import { NavigationContainerRef } from '@react-navigation/native';
 
-export const navigationRef = createRef();
-export const isMountedRef = createRef();
-export const routeNameRef = createRef();
+
+export const navigationRef = createRef<NavigationContainerRef>();
+export const isMountedRef = createRef<NavigationContainerRef>();
+export const routeNameRef = createRef<NavigationContainerRef>();
 
 const navigate = (name, params) => {
   // if (isMountedRef.current && navigationRef.current) {

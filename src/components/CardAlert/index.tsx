@@ -1,14 +1,12 @@
 import React from "react";
 import { Container, Description, Hr, Row, Title } from "./styles";
 import { Ionicons } from '@expo/vector-icons';
+import { CardAlertT } from './index.type';
 
-export default function CardAlert({
+const CardAlert: React.FC<CardAlertT> = ({
   title,
   description,
-}: {
-  title: Text;
-  description: Text;
-}) {
+}) => {
   return (
     <Container>
       <Row>
@@ -20,3 +18,5 @@ export default function CardAlert({
     </Container>
   );
 }
+
+export default CardAlert;

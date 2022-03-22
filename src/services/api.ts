@@ -7,3 +7,5 @@ export const api = axios.create({
   baseURL: 'https://api.openweathermap.org/data/2.5/',
   timeout: 180000,
 });
+
+export const apiImage = 'http://openweathermap.org/img';

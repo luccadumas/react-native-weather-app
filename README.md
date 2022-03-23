@@ -98,9 +98,9 @@ npm install npm@latest -g
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/luccadumas/react-native-weather-app.git
-   ```
+ ```sh
+ git clone https://github.com/luccadumas/react-native-weather-app.git
+ ```
 2. Open folder of project
  ```sh
   cd react-native-weather-app/

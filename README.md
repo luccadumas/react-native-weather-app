@@ -31,6 +31,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#preview">Preview</a></li>
       </ul>
     </li>
     <li>
@@ -75,7 +76,11 @@ A list of people and technologies that contributed to this project is listed in 
 * [Eslint](https://eslint.org)
 * [Prettier](https://prettier.io)
 
-
+<!-- GETTING STARTED -->
+## Preview
+<div align="center">
+  <img width="308" alt="image" src="https://user-images.githubusercontent.com/13615256/159747788-dbf397cf-0b2d-4ffc-9f08-2031cc47cbfb.png">
+</div>
 
 <!-- GETTING STARTED -->
 ## Getting Started

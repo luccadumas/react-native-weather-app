@@ -117,7 +117,9 @@ This is an example of how to list things you need to use the software and how to
    ```
 5. Create a env.json file in the root folder and put your keys in the file like this:
 
-API_TOKEN=YourOpenWeatherKeyHere
+```sh
+  API_TOKEN=YourOpenWeatherKeyHere
+```
 
 *See the example in the env.example.json file.*
 

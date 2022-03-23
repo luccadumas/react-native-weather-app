@@ -1,4 +1,4 @@
-import { API_TOKEN } from '../../../env.json'
+import { API_TOKEN } from '@env'
 import { call, all, fork, put, takeLatest } from 'redux-saga/effects';
 
 import { GET_CURRENTWEATHER, GET_ONECALL } from './actionTypes';

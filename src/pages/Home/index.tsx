@@ -24,7 +24,7 @@ import {
   Refresh,
   MessageError,
 } from './styles';
-import {ActivityIndicator, ScrollView} from 'react-native';
+import {ActivityIndicator} from 'react-native';
 import CardWeather from '../../components/CardWeather';
 import {customToast} from '../../util/showMessage';
 

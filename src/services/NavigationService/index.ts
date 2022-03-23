@@ -1,17 +1,12 @@
-import { createRef } from 'react';
-import { NavigationContainerRef } from '@react-navigation/native';
-
+import {createRef} from 'react';
+import {NavigationContainerRef} from '@react-navigation/native';
 
 export const navigationRef = createRef<NavigationContainerRef>();
 export const isMountedRef = createRef<NavigationContainerRef>();
 export const routeNameRef = createRef<NavigationContainerRef>();
 
 const navigate = (name, params) => {
-  // if (isMountedRef.current && navigationRef.current) {
-    return navigationRef.current.navigate(name, params);
-  // } else {
-    // console.error('!!!!not mounted yet 1!!!!!!!');
-  // }
+  return navigationRef.current.navigate(name, params);
 };
 
 const reset = (name, params) => {

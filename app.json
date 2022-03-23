@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-weather-app",
-    "slug": "react-native-weather-app",
+    "name": "Miih Weather",
+    "slug": "miih-weather",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",

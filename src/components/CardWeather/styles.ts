@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import colors from "../../constants/colors";
-import { normalize } from '../../util/normalize';
+import colors from '../../constants/colors';
+import {normalize} from '../../util/normalize';
 
 export const Container = styled.View`
   flex-direction: column;
@@ -9,6 +9,41 @@ export const Container = styled.View`
   margin-bottom: 30px;
   border-radius: 8px;
   padding: 10px;
+`;
+
+export const Button = styled.TouchableOpacity`
+  padding: 20px;
+  flex-direction: column;
+  margin-vertical: 8px;
+  margin-horizontal: 6px;
+`;
+
+export const Date = styled.Text`
+  font-size: ${normalize(11)};
+  color: ${colors.gray};;
+  font-weight: 600;
+  align-self: center;
+`;
+
+export const Temp = styled.Text`
+  margin-top: 10px;
+  font-size: ${normalize(12)};
+  align-self: center;
+  color: ${colors.light};;
+  font-weight: 600;
+`;
+
+export const Weather = styled.Image`
+  width: 40px;
+  height: 40px;
+  align-self: center;
+`;
+
+export const WindSpeed = styled.Text`
+  font-size: ${normalize(10)};
+  color: ${colors.light};;
+  font-weight: 600;
+  align-self: center;
 `;
 
 export const Row = styled.View`

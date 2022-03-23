@@ -14,9 +14,16 @@ export function convertUnixDate(unixTime) {
     // Will display time in 10:30:23 format
     let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-    let dateFormatted = format(new Date(String(date)), 'dd/MM/yyyy')
+    let dayFormatted = format(new Date(String(date)), 'dd')
 
-    console.log(dateFormatted + " " + formattedTime)
-
-    return dateFormatted + " " + formattedTime;
+    // show the day like today
+    if (dayFormatted === format(new Date(), 'dd')) {
+        dayFormatted = 'hoje'
+    }
+    // show the day like tomorrow
+    else if (dayFormatted === format(new Date().setDate(new Date().getDate() + 1), 'dd')) {
+        dayFormatted = 'amanhã'
+    }
+    
+    return dayFormatted;
 }

@@ -6,7 +6,8 @@ const colors = {
  cardPrimary: 'rgba(4, 70, 141, .3) ',
  footerText: '#818C8E',
  buttonClean: '#CCDBE5',
- buttonFilter: '#E64966'
+ buttonFilter: '#E64966',
+ gray: '#ddd',
 }
 
 export default colors;

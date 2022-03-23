@@ -1,11 +1,15 @@
-import { SET_STORED_CURRENTWEATHER } from './actionTypes';
+import {SET_STORED_CURRENTWEATHER, SET_STORED_ONECALL} from './actionTypes';
 
 const INITIAL_STATE = {
+  loading: true,
   storedCity: null,
   storedTemp: null,
   storedTempMax: null,
   storedTempMin: null,
-  storedWeather: null
+  storedWeather: null,
+  storedDailyList: [],
+  storedDescription: null,
+  storedEvent: null,
 };
 
 const weather = (state = INITIAL_STATE, action) => {
@@ -16,7 +20,7 @@ const weather = (state = INITIAL_STATE, action) => {
         temp: storedTemp,
         temp_max: storedTempMax,
         temp_min: storedTempMin,
-        weather: storedWeather
+        weather: storedWeather,
       } = action.payload;
 
       return {
@@ -25,11 +29,26 @@ const weather = (state = INITIAL_STATE, action) => {
         storedTemp,
         storedTempMax,
         storedTempMin,
-        storedWeather
+        storedWeather,
+      };
+    }
+    case SET_STORED_ONECALL: {
+      const {
+        description: storedDescription,
+        event: storedEvent,
+        daily: storedDailyList,
+      } = action.payload;
+
+      return {
+        ...state,
+        loading: false,
+        storedDailyList,
+        storedDescription,
+        storedEvent,
       };
     }
     default:
-      return { ...state };
+      return {...state};
   }
 };
 

@@ -5,7 +5,7 @@ import {
   SafeAreaView,
   Text,
 } from 'react-native';
-import {apiImage} from '../../services/api';
+import { API_URL_IMG } from '@env';
 import {convertMetrics} from '../../util/convertMetrics';
 import {convertUnixDate} from '../../util/convertUnixTime';
 import {Button, Date, Temp, Weather, WindSpeed} from './styles';
@@ -16,7 +16,7 @@ const Item = ({item, onPress}) => (
     <Temp>{item?.temp?.day}°</Temp>
     <Weather
       source={{
-        uri: `${apiImage}/wn/${item?.weather?.[0]?.icon}@2x.png`,
+        uri: `${API_URL_IMG}/wn/${item?.weather?.[0]?.icon}@2x.png`,
       }}
     />
     <WindSpeed>{`${convertMetrics(item?.wind_speed)} km/h`}</WindSpeed>

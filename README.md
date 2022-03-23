@@ -91,9 +91,9 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+npm install npm@latest -g
+```
 
 ### Installation
 
@@ -107,31 +107,33 @@ This is an example of how to list things you need to use the software and how to
    ```
 3. Make sure that you have install expo globally.
 
-  ```sh
-    npm install --global expo-cli
-  ```
+```sh
+npm install --global expo-cli
+```
 
 4. Install NPM packages
-   ```sh
-    npm install
-   ```
-   ou
-   
-   ```sh
-   yarn
-   ```
+ ```sh
+ npm install
+ ```
+ ou
+
+ ```sh
+ yarn
+ ```
 5. Create a .env file in the root folder and put your keys in the file like this:
 
 ```sh
-  API_TOKEN=YourOpenWeatherKeyHere
+API_URL=https://api.openweathermap.org
+API_URL_IMG=http://openweathermap.org/img
+API_TOKEN=YourOpenWeatherKeyHere
 ```
 
 *See the example in the .env.example file.*
 
 6. Start the server
-   ```sh
-     expo start
-   ```
+ ```sh
+ expo start
+ ```
 
 <!-- ROADMAP -->
 ## Roadmap

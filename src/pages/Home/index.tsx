@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, {useEffect, useState} from 'react';
 import * as Location from 'expo-location';
 import CardAlert from '../../components/CardAlert';
@@ -32,9 +31,9 @@ export default function Home() {
   const dispatch = useDispatch();
 
   const [location, setLocation] = useState(null);
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
+  const [latitude, setLatitude] = useState<Number>(0.00);
+  const [longitude, setLongitude] = useState<Number>(0.00);
+  const [errorMsg, setErrorMsg] = useState<String>('');
   const loading = useSelector((state: StoreType) => state.Weather.loading);
 
   const {
@@ -75,11 +74,11 @@ export default function Home() {
       return () => {
         dispatch(
           setStoredCurrentWeather({
-            city: null,
-            temp: null,
-            temp_max: null,
-            temp_min: null,
-            weather: null,
+            city: "",
+            temp: 0.00,
+            temp_max: 0.00,
+            temp_min: 0.00,
+            weather: "",
             daily: [],
           }),
         );

@@ -1,4 +1,4 @@
-export type CardAlertT = {
-  title: Text;
-  description: Text;
+export type CardAlertType = {
+  title: String;
+  description: String;
 };

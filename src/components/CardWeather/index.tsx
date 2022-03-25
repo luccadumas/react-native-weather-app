@@ -23,7 +23,7 @@ const Item = ({item, onPress}) => (
   </Button>
 );
 
-export default function CardWeather({title, data}: {title: Text; data: []}) {
+export default function CardWeather({title, data}: {title: String; data: []}) {
   const [selectedId, setSelectedId] = useState(null);
   const renderItem = ({item}) => {
     return <Item item={item} onPress={() => setSelectedId(item.id)} />;

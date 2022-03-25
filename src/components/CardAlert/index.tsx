@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Description, Hr, Row, Title } from "./styles";
 import { Ionicons } from '@expo/vector-icons';
-import { CardAlertT } from './index.type';
+import { CardAlertType } from './index.type';
 
-const CardAlert: React.FC<CardAlertT> = ({
+const CardAlert: React.FC<CardAlertType> = ({
   title,
   description,
 }) => {

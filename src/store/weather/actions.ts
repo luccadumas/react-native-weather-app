@@ -1,40 +1,40 @@
 import { GET_CURRENTWEATHER, GET_ONECALL, SET_STORED_CURRENTWEATHER, SET_STORED_ONECALL } from './actionTypes';
 
 export interface GetCurrentWeatherPayload {
-  latitude: number;
-  longitude: number;
+  latitude: Number;
+  longitude: Number;
 }
 
 export interface SetCurrentWeatherPayload {
-  city: Text;
-  temp: number;
-  temp_max: number;
-  temp_min: number;
-  weather: Text;
+  city: String;
+  temp: Number;
+  temp_max: Number;
+  temp_min: Number;
+  weather: String;
 }
 
 export interface DailyType {
-  dt: number;
-  wind_speed: number;
+  dt: Number;
+  wind_speed: Number;
   temp: {
-    day: number;
-    min: number;
-    max: number;
-    night: number;
-    eve: number;
-    morn: number;
+    day: Number;
+    min: Number;
+    max: Number;
+    night: Number;
+    eve: Number;
+    morn: Number;
   };
   weather: [
     {
-      description: Text;
-      icon: Text;
+      description: String;
+      icon: String;
     }
   ]
 }
 export interface SetOneCallPayload {
   daily: [DailyType];
-  description: Text;
-  event: Text;
+  description: String;
+  event: String;
 }
 
 export function getCurrentWeather({ latitude, longitude }: GetCurrentWeatherPayload) {
